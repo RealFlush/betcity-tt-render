@@ -14,7 +14,6 @@ services:
   - type: cron
     name: results-cron
     env: python
-    plan: free
     schedule: "*/5 * * * *"           # каждые 5 минут
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python results_job.py"
@@ -27,7 +26,6 @@ services:
   - type: cron
     name: predictions-cron
     env: python
-    plan: free
     schedule: "*/5 * * * *"           # каждые 5 минут
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python predictions_job.py"
@@ -39,4 +37,3 @@ services:
 
 databases:
   - name: tt-db
-    plan: free
